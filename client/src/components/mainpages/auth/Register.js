@@ -19,9 +19,10 @@ function Register(props) {
     const registerSubmit = async(e) =>{
         e.preventDefault()
         try {
-            await axios.post('/user/register', {...user})
+          const res = await axios.post('https://mern-todolist-cqwy.onrender.com/user/register', {...user})
 
             localStorage.setItem('firstLogin', true)
+            localStorage.setItem('accesstoken', res.data.accesstoken)
 
             window.location.href = "/";
 

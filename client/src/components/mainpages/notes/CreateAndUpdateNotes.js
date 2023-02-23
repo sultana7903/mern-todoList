@@ -53,12 +53,12 @@ function CreateAndUpdateNotes(props) {
         try {
 
             if(onEdit){
-                await axios.put(`/api/notes/${note._id}`, {...note}, {
+                await axios.put(`https://mern-todolist-cqwy.onrender.com/api/notes/${note._id}`, {...note}, {
                     headers: { Authorization: token}
                 })
                 setCallback(!callback)
             }else{
-                await axios.post('/api/notes', {...note}, {
+                await axios.post('https://mern-todolist-cqwy.onrender.com/api/notes', {...note}, {
                     headers: { Authorization: token}
                 })
                 setCallback(!callback)

@@ -12,15 +12,17 @@ export const DataProvider = ({children}) =>{
 
     const [token, setToken] = useState(false)
 
-    const refreshToken = async () =>{
-        const res = await axios.get('/user/refresh_token')
-        // console.log(res);
-        setToken(res.data.accesstoken)
-    }
+    // const refreshToken = async () =>{
+    //     // const res = await axios.get('/user/refresh_token')
+    //     // console.log(res);
+    //     setToken(res.data.accesstoken)
+    // }
 
     useEffect(()=>{
         const firstLogin = localStorage.getItem('firstLogin')
-        if(firstLogin) refreshToken()
+        if(firstLogin){
+            setToken(localStorage.getItem("accesstoken"))
+        } 
     }, [])
 
     const state = {

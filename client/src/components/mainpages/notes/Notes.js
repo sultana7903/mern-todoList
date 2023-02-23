@@ -17,7 +17,7 @@ function Notes(){
     const deleteNote = async(id) =>{
         try {
             if(isAdmin){
-            await axios.delete(`/api/notes/${id}`, {
+            await axios.delete(`https://mern-todolist-cqwy.onrender.com/api/notes/${id}`, {
                 headers: { Authorization: token}
             })
                 setCallback(!callback)

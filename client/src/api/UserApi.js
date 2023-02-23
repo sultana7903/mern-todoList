@@ -11,7 +11,7 @@ function UserApi(token) {
             const getUser = async() =>{
 
                 try {
-                    const res = await axios.get('/user/info', {
+                    const res = await axios.get('https://mern-todolist-cqwy.onrender.com/user/info', {
                         headers: {Authorization: token}
                     })
                         setIsLogged(true)
